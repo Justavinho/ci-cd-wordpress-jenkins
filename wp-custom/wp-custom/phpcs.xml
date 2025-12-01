@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<ruleset name="WP-Custom-Analysis">
+    <description>Reglas básicas para análisis estático del WordPress personalizado.</description>
+
+    <file>src/wp-content/themes</file>
+
+    <rule ref="PSR12"/>
+
+    <exclude-pattern>*/vendor/*</exclude-pattern>
+</ruleset>

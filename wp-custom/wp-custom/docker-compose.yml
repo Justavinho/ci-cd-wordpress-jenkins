@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  db_custom:
+    image: mariadb:10.11
+    container_name: wp_custom_db
+    restart: always
+    environment:
+      MYSQL_DATABASE: wordpress_custom
+      MYSQL_USER: wp_custom_user
+      MYSQL_PASSWORD: keymaster23king
+      MYSQL_ROOT_PASSWORD: keymaster23king-2445
+    volumes:
+      - wp_custom_db_data:/var/lib/mysql
+    networks:
+      - wp_custom_net
+
+  wordpress_custom:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: wp_custom_app
+    depends_on:
+      - db_custom
+    restart: always
+    environment:
+      WORDPRESS_DB_HOST: db_custom:3306
+      WORDPRESS_DB_USER: wp_custom_user
+      WORDPRESS_DB_PASSWORD: keymaster23king
+      WORDPRESS_DB_NAME: wordpress_custom
+    ports:
+      - "8081:80"
+    volumes:
+      - wp_custom_data:/var/www/html
+    networks:
+      - wp_custom_net
+
+networks:
+  wp_custom_net:
+
+volumes:
+  wp_custom_db_data:
+  wp_custom_data:
