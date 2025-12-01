@@ -12,19 +12,37 @@ pipeline {
             }
         }
 
+        stage('Static Analysis') {
+            steps {
+                echo 'Ejecutando análisis estático sobre el código del WordPress personalizado (PHPStan + PHP_CodeSniffer)'
+                sh '''
+                cd ${WORKSPACE}/wp-custom
+                ./analysis/static_analysis.sh
+                '''
+            }
+        }
+
         stage('Build (no-op for Compose)') {
             steps {
-                echo 'No se construye imagen custom por ahora (se usan imágenes oficiales)'
+                echo 'No se construye imagen adicional aquí: se usan Docker Compose + Dockerfile de wp-custom.'
             }
         }
 
         stage('Deploy') {
             steps {
-                echo 'Desplegando con docker compose'
+                echo 'Desplegando stack principal (WordPress oficial) con docker compose'
                 sh '''
                 cd ${COMPOSE_PROJECT_DIR}
                 docker compose down
                 docker compose pull
+                docker compose up -d
+                '''
+
+                echo 'Desplegando stack WordPress personalizado (puerto 8081)'
+                sh '''
+                cd ${WORKSPACE}/wp-custom
+                docker compose down
+                docker compose build
                 docker compose up -d
                 '''
             }
@@ -33,10 +51,10 @@ pipeline {
 
     post {
         success {
-            echo 'Despliegue completado exitosamente.'
+            echo 'Pipeline completado exitosamente: análisis estático OK y ambos WordPress desplegados.'
         }
         failure {
-            echo 'El despliegue ha fallado. Revisar logs.'
+            echo 'El pipeline ha fallado. Revisar especialmente el stage de Static Analysis para ver los problemas detectados.'
         }
     }
 }
