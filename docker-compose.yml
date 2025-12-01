@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  db:
+    image: mariadb:10.11
+    container_name: wp_db
+    restart: always
+    environment:
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wp_user
+      MYSQL_PASSWORD: keymaster23king
+      MYSQL_ROOT_PASSWORD: keymaster23king-2445
+    volumes:
+      - wp_db_data:/var/lib/mysql
+    networks:
+      - wp_net
+
+  wordpress:
+    image: wordpress:6.6-php8.1-apache
+    container_name: wp_app
+    depends_on:
+      - db
+    restart: always
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: wp_user
+      WORDPRESS_DB_PASSWORD: keymaster23king
+      WORDPRESS_DB_NAME: wordpress
+    ports:
+      - "80:80"
+    volumes:
+      - wp_data:/var/www/html
+    networks:
+      - wp_net
+
+networks:
+  wp_net:
+    external: true
+
+volumes:
+  wp_db_data:
+    external: true
+  wp_data:
