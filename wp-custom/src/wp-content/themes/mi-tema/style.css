@@ -205,11 +205,11 @@ body {
     .hero h1 {
         font-size: 2em;
     }
-    
+
     .hero .subtitle {
         font-size: 1em;
     }
-    
+
     .feature-grid {
         grid-template-columns: 1fr;
     }

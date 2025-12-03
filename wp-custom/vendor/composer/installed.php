@@ -3,7 +3,7 @@
         'name' => 'estudiante/wp-custom-analysis',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => 'b05c1ed71324fef284067f163f4b51759df0c858',
+        'reference' => '41cd652e0e2e40f7df8d8d0b55a7368ac28d4ddc',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'estudiante/wp-custom-analysis' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => 'b05c1ed71324fef284067f163f4b51759df0c858',
+            'reference' => '41cd652e0e2e40f7df8d8d0b55a7368ac28d4ddc',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
