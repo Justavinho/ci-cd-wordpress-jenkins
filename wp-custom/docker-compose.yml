@@ -30,8 +30,8 @@ services:
       WORDPRESS_DB_NAME: wordpress_custom
     ports:
       - "8081:80"
-    volumes:
-      - wp_custom_data:/var/www/html
+#    volumes:
+ #     - wp_custom_data:/var/www/html
     networks:
       - wp_custom_net
 
@@ -40,4 +40,4 @@ networks:
 
 volumes:
   wp_custom_db_data:
-  wp_custom_data:
+  #wp_custom_data:
