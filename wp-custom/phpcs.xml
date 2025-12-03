@@ -7,4 +7,6 @@
     <rule ref="PSR12"/>
 
     <exclude-pattern>*/vendor/*</exclude-pattern>
+
+    <exclude-pattern>src/wp-content/themes/mi-tema/functions.php</exclude-pattern>
 </ruleset>
