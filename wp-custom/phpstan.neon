@@ -5,3 +5,8 @@ parameters:
   ignoreErrors:
     - '#Function get_header not found#'
     - '#Function get_footer not found#'
+    - '#Function add_theme_support not found#'
+    - '#Function add_action not found#'
+    - '#Function get_stylesheet_uri not found#'
+    - '#Function wp_enqueue_style not found#'
+    - '#Function get_bloginfo not found#'
