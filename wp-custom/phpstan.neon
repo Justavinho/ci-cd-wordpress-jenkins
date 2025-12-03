@@ -3,3 +3,5 @@ parameters:
   paths:
     - src/wp-content/themes
   ignoreErrors:
+    - '#Function get_header not found#'
+    - '#Function get_footer not found#'

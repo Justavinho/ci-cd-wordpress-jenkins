@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'estudiante/wp-custom-analysis',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => null,
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
+        'reference' => 'ce71f668040d9a29e6193a0a0b5f99f3787d863b',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         'estudiante/wp-custom-analysis' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => null,
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'reference' => 'ce71f668040d9a29e6193a0a0b5f99f3787d863b',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
