@@ -3,7 +3,7 @@
 <main class="site-main">
     <section class="hero">
         <div class="container">
-            <h1>🚀 WordPress Personalizado - CI/CD Pipeline</h1>
+            <h1> WordPress Personalizado - CI/CD Pipeline</h1>
             <p class="subtitle">Desplegado automáticamente con Jenkins, Docker y GitHub</p>
             <div class="version-info">
                 <span class="badge">Versión 3.0</span>
