@@ -2,6 +2,7 @@ parameters:
   level: 4
   paths:
     - src/wp-content/themes
+  tmpDir: %currentWorkingDirectory%/tmp/phpstan
   ignoreErrors:
     - '#Function get_header not found#'
     - '#Function get_footer not found#'
